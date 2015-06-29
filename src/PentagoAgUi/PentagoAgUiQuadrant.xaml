@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="PentagoAgUi.PentagoAgUiQuadrant"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:PentagoAgUi="clr-namespace:PentagoAgUi">
+    <UserControl.Resources>
+        <LinearGradientBrush x:Key="DisplayRectFill" EndPoint="0.5,1" StartPoint="0.5,0" SpreadMethod="Pad" MappingMode="RelativeToBoundingBox">
+            <GradientStop Color="#FFA5670C" Offset="0.219"/>
+            <GradientStop Color="#FFDAC064" Offset="1"/>
+        </LinearGradientBrush>
+        <Storyboard x:Name="QuadrantRotation">
+            <DoubleAnimation Storyboard.TargetName="MasterGrid" Storyboard.TargetProperty="(UIElement.RenderTransform).Angle"/>
+        </Storyboard>
+    </UserControl.Resources>
+    <Canvas x:Name="MasterCanvas" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+        <Grid x:Name="MasterGrid" RenderTransformOrigin="0.5,0.5" Width="200" Height="200">
+            <Grid.RenderTransform>
+                <RotateTransform/>
+            </Grid.RenderTransform>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="6*"/>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="6*"/>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="6*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="6*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="6*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="6*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Rectangle x:Name="DisplayRect" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="7" Grid.RowSpan="7"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Fill="{StaticResource DisplayRectFill}" StrokeThickness="3" Stroke="#FFA58B12"/>
+            <PentagoAgUi:PentagoAgUiDot x:Name="NWDot" Grid.Row="1" Grid.Column="1"/>
+            <PentagoAgUi:PentagoAgUiDot x:Name="NDot" Grid.Row="1" Grid.Column="3"/>
+            <PentagoAgUi:PentagoAgUiDot x:Name="NEDot" Grid.Row="1" Grid.Column="5"/>
+            <PentagoAgUi:PentagoAgUiDot x:Name="WDot" Grid.Row="3" Grid.Column="1"/>
+            <PentagoAgUi:PentagoAgUiDot x:Name="CenterDot" Grid.Row="3" Grid.Column="3"/>
+            <PentagoAgUi:PentagoAgUiDot x:Name="EDot" Grid.Row="3" Grid.Column="5"/>
+            <PentagoAgUi:PentagoAgUiDot x:Name="SWDot" Grid.Row="5" Grid.Column="1"/>
+            <PentagoAgUi:PentagoAgUiDot x:Name="SDot" Grid.Row="5" Grid.Column="3"/>
+            <PentagoAgUi:PentagoAgUiDot x:Name="SEDot" Grid.Row="5" Grid.Column="5"/>
+           <TextBox x:Name="dbgbox" Grid.Column="3" Grid.Row="3" Opacity="0" Visibility="Collapsed"/>
+        </Grid>
+    </Canvas>
+</UserControl>

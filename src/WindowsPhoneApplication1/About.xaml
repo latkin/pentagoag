@@ -1,0 +1,75 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="WindowsPhonePentago.About"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot contains the root grid where all other page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="24,24,0,12">
+            <TextBlock x:Name="ApplicationTitle" Style="{StaticResource PhoneTextNormalStyle}" Text="Pentago"/>
+            <TextBlock x:Name="PageTitle" Text="about" Margin="-3,-8,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentGrid" Grid.Row="1">
+        	<Grid.RowDefinitions>
+        		<RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+			</Grid.RowDefinitions>
+        	<ScrollViewer VerticalScrollBarVisibility="Visible" Grid.Row="0" >
+        	<StackPanel>
+        		<TextBlock Text="rules" Margin="15,25,0,0" Style="{StaticResource PhoneTextGroupHeaderStyle}" >
+        			<TextBlock.Foreground>
+        				<SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+        			</TextBlock.Foreground>
+        		</TextBlock>
+				<TextBlock Style="{StaticResource PhoneTextNormalStyle}" TextWrapping="Wrap" FontSize="24">
+					<TextBlock.Foreground>
+						<SolidColorBrush Color="{StaticResource PhoneTextBoxColor}"/>
+					</TextBlock.Foreground>
+            Players take turns placing pieces on any open position.
+			<LineBreak/><LineBreak/>The first player to get 5 in a row - horizontal, vertical, or diagonal - wins.
+			<LineBreak/><LineBreak/><Run FontWeight="Bold">Here's the twist:</Run>
+			<LineBreak/>On your turn you not only place a
+            piece, you must also rotate one quadrant of the
+            board 90 degrees in either direction.
+            <LineBreak/><LineBreak/>If both players get 5 in a row at the same time or
+            all positions are occupied but there is no winner,
+            the game is a draw.
+			</TextBlock>
+            <TextBlock Text="how to play" Margin="15,25,0,0" Style="{StaticResource PhoneTextGroupHeaderStyle}" >
+            	<TextBlock.Foreground>
+            		<SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+            	</TextBlock.Foreground>
+            </TextBlock>
+			<TextBlock Style="{StaticResource PhoneTextNormalStyle}" TextWrapping="Wrap" FontSize="24">
+				<TextBlock.Foreground>
+					<SolidColorBrush Color="{StaticResource PhoneTextBoxColor}"/>
+				</TextBlock.Foreground>
+            On your turn, tap any open position to place
+            your piece there.  Then drag the corner of any
+            quadrant to rotate it.
+			</TextBlock>
+			</StackPanel>
+			</ScrollViewer>
+			<Button Content="back" HorizontalAlignment="Center" Grid.Row="1" Click="GoBackButton_Click"></Button>
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>

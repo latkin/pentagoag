@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="WindowsPhonePentago.PentagoQuadrant"
+             xmlns:WindowsPhonePentago="clr-namespace:WindowsPhonePentago"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    >
+
+    <UserControl.Resources>
+        <Storyboard x:Name="QuadrantRotation">
+            <DoubleAnimation Storyboard.TargetName="MasterGrid" Storyboard.TargetProperty="(UIElement.RenderTransform).Rotation"/>
+        </Storyboard>
+        <Storyboard x:Name="QuadrantTranslation">
+            <DoubleAnimation Storyboard.TargetName="MasterGrid" Storyboard.TargetProperty="(UIElement.RenderTransform).TranslateX"/>
+            <DoubleAnimation Storyboard.TargetName="MasterGrid" Storyboard.TargetProperty="(UIElement.RenderTransform).TranslateY"/>
+        </Storyboard>
+		<SolidColorBrush x:Key="NaturalFill" Color="#FFA58B12"/>
+        <SolidColorBrush x:Key="RedFill"  Color="#FF951010"/>
+    </UserControl.Resources>
+	<Grid x:Name="RefGrid">
+        <Grid x:Name="MasterGrid" RenderTransformOrigin="0.5,0.5">
+            <Grid.RenderTransform>
+                <CompositeTransform/>
+            </Grid.RenderTransform>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Rectangle x:Name="DisplayRect" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="7" Grid.RowSpan="7"
+			HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+			OpacityMask="#FF640000"
+			/>
+            <WindowsPhonePentago:PentagoDot x:Name="NWDot" Grid.Row="1" Grid.Column="1"/>
+            <WindowsPhonePentago:PentagoDot x:Name="NDot" Grid.Row="1" Grid.Column="3"/>
+            <WindowsPhonePentago:PentagoDot x:Name="NEDot" Grid.Row="1" Grid.Column="5"/>
+            <WindowsPhonePentago:PentagoDot x:Name="WDot" Grid.Row="3" Grid.Column="1"/>
+            <WindowsPhonePentago:PentagoDot x:Name="CenterDot" Grid.Row="3" Grid.Column="3"/>
+            <WindowsPhonePentago:PentagoDot x:Name="EDot" Grid.Row="3" Grid.Column="5"/>
+            <WindowsPhonePentago:PentagoDot x:Name="SWDot" Grid.Row="5" Grid.Column="1"/>
+            <WindowsPhonePentago:PentagoDot x:Name="SDot" Grid.Row="5" Grid.Column="3"/>
+            <WindowsPhonePentago:PentagoDot x:Name="SEDot" Grid.Row="5" Grid.Column="5"/>
+            <TextBox x:Name="dbgbox" Grid.Column="3" Grid.Row="3" Opacity="0" Visibility="Collapsed"/>
+        </Grid>
+		</Grid>
+</UserControl>

@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="PentagoAgUi.PentagoAgUiDot"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" >
+    <UserControl.Resources>
+        <RadialGradientBrush x:Key="BlackDotFill" SpreadMethod="Pad">
+            <GradientStop Color="#FF555555" Offset="0"/>
+            <GradientStop Color="#FF282727" Offset="1"/>
+        </RadialGradientBrush>
+        <RadialGradientBrush x:Key="WhiteDotFill"  SpreadMethod="Pad">
+            <GradientStop Color="#FFF4F4F5" Offset="0"/>
+            <GradientStop Color="#FFABAAAA" Offset="1"/>
+        </RadialGradientBrush>
+        <LinearGradientBrush x:Key="EmptyDotFill" EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFD8BD62"/>
+            <GradientStop Color="#FFA4670C" Offset="1"/>
+        </LinearGradientBrush>
+    </UserControl.Resources>
+
+    <Ellipse x:Name="Elly" Fill="{StaticResource EmptyDotFill}">
+        <Ellipse.StrokeThickness>5</Ellipse.StrokeThickness>
+    </Ellipse>
+</UserControl>
