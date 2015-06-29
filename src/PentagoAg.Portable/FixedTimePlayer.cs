@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace PentagoAgEngine
 {
@@ -31,7 +32,7 @@ namespace PentagoAgEngine
 
             List<Board> boards = b.GenerateSafeBoards(true);
 
-            Console.Write("Safe moves: " + boards.Count.ToString());
+            Debug.WriteLine("Safe moves: " + boards.Count.ToString());
 
             // if opponent wins on their next move no matter what
             if (boards.Count == 0)
@@ -97,7 +98,7 @@ namespace PentagoAgEngine
                 BoardEvaluator.SortBoards(ref boards);
             }
 
-            Console.WriteLine(String.Format("Depth: {0} Score: {1}", lastCompletedDepth, lastCompletedDepthScore));
+            Debug.WriteLine(String.Format("Depth: {0} Score: {1}", lastCompletedDepth, lastCompletedDepthScore));
             return bestBoardLastCompletedDepth;
         }
 

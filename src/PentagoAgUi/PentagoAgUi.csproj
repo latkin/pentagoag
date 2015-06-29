@@ -14,7 +14,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PentagoAgUi</RootNamespace>
     <AssemblyName>PentagoAgUi</AssemblyName>
-    <TargetFrameworkVersion>v3.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
     <SilverlightApplication>true</SilverlightApplication>
     <SupportedCultures>
     </SupportedCultures>
@@ -31,7 +31,7 @@
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
-    <OldToolsVersion>3.5</OldToolsVersion>
+    <OldToolsVersion>4.0</OldToolsVersion>
     <EnableOutOfBrowser>true</EnableOutOfBrowser>
     <OutOfBrowserSettingsFile>Properties\OutOfBrowserSettings.xml</OutOfBrowserSettingsFile>
     <IsWebBootstrapper>false</IsWebBootstrapper>
@@ -129,12 +129,6 @@
     <None Include="Properties\AppManifest.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PentagoAgEngine\PentagoAgEngine.csproj">
-      <Project>{491803C4-1E9B-4C2F-819C-0B9E57A2120C}</Project>
-      <Name>PentagoAgEngine</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Properties\OutOfBrowserSettings.xml" />
   </ItemGroup>
   <ItemGroup>
@@ -168,6 +162,12 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PentagoAg.Portable\PentagoAg.Portable.csproj">
+      <Project>{793b4e0e-f737-4081-90ec-5a0ce8e11895}</Project>
+      <Name>PentagoAg.Portable</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

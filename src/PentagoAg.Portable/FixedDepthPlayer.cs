@@ -22,7 +22,6 @@ namespace PentagoAgEngine
                 throw new ArgumentException("Depth must be at least 0");
         }
 
-
         public override Board Play(Board b)
         {
             if (b.CurrentPlayer != this.Color)
@@ -36,7 +35,7 @@ namespace PentagoAgEngine
             else
                 boards = b.GenerateSafeBoards();
 
-            Console.Write("Safe moves: " + boards.Count.ToString());
+            Debug.WriteLine("Safe moves: " + boards.Count.ToString());
 
             // if opponent wins on their next move no matter what
             if (boards.Count == 0)
