@@ -331,7 +331,7 @@ namespace PentagoAgUi
                 else
                 {
                     Debug.Assert(false, "Hard");
-                    masterAI = new FixedTimePlayer(PieceColor.White, 30);
+                    masterAI = new FixedTimePlayer(PieceColor.White, 5);
                 }
 
                 aiThinking = true;
@@ -345,7 +345,7 @@ namespace PentagoAgUi
                 else if ((bool)aiMediumRadioButton.IsChecked)
                     masterAI = new FixedDepthPlayer(PieceColor.Black, 2);
                 else
-                    masterAI = new FixedTimePlayer(PieceColor.Black, 30);
+                    masterAI = new FixedTimePlayer(PieceColor.Black, 5);
                 okToClickDots = true;
                 okToRotateQuadrant = false;
                 BottomText.Text = "Your move";
